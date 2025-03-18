@@ -13,18 +13,6 @@ from torch import nn
 from collections import Counter
 
 def getdata():
-
-
-    # Adjust the Format of the val split of the Dataset to be Used with ImageFolder
-    with open('tiny-imagenet/tiny-imagenet-200/val/val_annotations.txt') as f:
-        for line in f:
-            fn, cls, *_ = line.split('\t')
-            os.makedirs(f'tiny-imagenet/tiny-imagenet-200/val/{cls}', exist_ok=True)
-
-            shutil.copyfile(f'tiny-imagenet/tiny-imagenet-200/val/images/{fn}', f'tiny-imagenet/tiny-imagenet-200/val/{cls}/{fn}')
-
-    shutil.rmtree('tiny-imagenet/tiny-imagenet-200/val/images')
-
     # Transformations to Apply on EACH Input Image
     transform = T.Compose([
         T.Resize((224, 224)),  # Resize to Fit the Input Dimensions of the Network
