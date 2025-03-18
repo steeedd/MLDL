@@ -1,3 +1,4 @@
+
 # Define the Custom Neural Network
 class CustomNet(nn.Module):
     def __init__(self):
