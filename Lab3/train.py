@@ -5,7 +5,7 @@ from torch import nn
 import wandb  # Import wandb
 
 # Initialize wandb
-wandb.init(project="your_project_name", name="experiment_1", config={
+wandb.init(project="Lab3", name="experiment_1", config={
     "learning_rate": 0.001,
     "momentum": 0.9,
     "epochs": 10
